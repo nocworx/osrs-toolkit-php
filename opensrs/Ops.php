@@ -300,7 +300,8 @@ class Ops
         $search = array('&', '<', '>', "'", '"');
         $replace = array('&amp;', '&lt;', '&gt;', '&apos;', '&quot;');
         $string = str_replace($search, $replace, $string);
-        $string = utf8_encode($string);
+        // Fix for PHP 8.2 - utf8_encode is deprecated. Detect encoding and convert to UTF-8 
+        $string = mb_convert_encoding($string, 'UTF-8', mb_detect_encoding($string));
 
         return $string;
     }

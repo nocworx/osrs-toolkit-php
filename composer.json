@@ -14,6 +14,9 @@
             "email": "katkinson@tucows.com"
         }
     ],
+    "replace": {
+        "opensrs/osrs-toolkit-php": "^4.0.0"
+    },
     "require": {
         "mustangostang/spyc": "^0.5.1"
     },
